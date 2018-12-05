@@ -5,21 +5,17 @@ import java.util.List;
 public class Deck {
 
 	static List<Card> cards = new ArrayList<Card>();
+	public int Nokori = 55;
 
-	public static void main(String[] args) {
-		InitDeck();
-		CardDraw();
-	}
-
-	public static void InitDeck() {
+	public void InitDeck() {
 
 		String Mark = null;
 
 		for (int i = 1; i <= 14; i++) {
 			if (i == 14) {
 				Mark = "JOKER";
-				Card joker1 = new Card(0, Mark);
-				Card joker2 = new Card(0, Mark);
+				Card joker1 = new Card(14, Mark);
+				Card joker2 = new Card(14, Mark);
 				cards.add(joker1);
 				cards.add(joker2);
 				break;
@@ -50,12 +46,16 @@ public class Deck {
 
 	}
 
-	public static void CardDraw() {
-		while (cards.size() > 0) {
-			System.out.println("数値:" + cards.get(0).number + "  " + "マーク:" + cards.get(0).Mark);
-			cards.remove(0);
-			System.out.println("残りカード枚数:" + cards.size());
-		}
+	public Card CardDraw() {
+		Card card = null;
+		card = cards.get(0);
+		cards.remove(0);
+		return card;
+	}
+
+	public int NokoriCard() {
+		Nokori = cards.size();
+		return Nokori;
 	}
 
 }
