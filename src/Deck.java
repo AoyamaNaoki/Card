@@ -5,23 +5,10 @@ import java.util.List;
 public class Deck {
 
 	static List<Card> cards = new ArrayList<Card>();
-	public static boolean isStarted = false;
 
 	public static void main(String[] args) {
-		if (isStarted == false) {
-			InitDeck();
-			isStarted = true;
-		}
+		InitDeck();
 		CardDraw();
-		CardDraw();
-		CardDraw();
-		CardDraw();
-		CardDraw();
-		CardDraw();
-		CardDraw();
-		CardDraw();
-		CardDraw();
-
 	}
 
 	public static void InitDeck() {
@@ -60,13 +47,15 @@ public class Deck {
 			}
 		}
 		Collections.shuffle(cards);
-		System.out.println("登録データ数:" + cards.size());
+
 	}
 
 	public static void CardDraw() {
-		System.out.println(cards.get(0).number + "\t" + cards.get(0).Mark);
-		cards.remove(0);
-		System.out.println("登録データ数:" + cards.size());
+		while (cards.size() > 0) {
+			System.out.println("数値:" + cards.get(0).number + "  " + "マーク:" + cards.get(0).Mark);
+			cards.remove(0);
+			System.out.println("残りカード枚数:" + cards.size());
+		}
 	}
 
 }
