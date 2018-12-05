@@ -58,4 +58,12 @@ public class Deck {
 		return Nokori;
 	}
 
+	public int KeepNumber(int beforeNumber, int newNumber) {
+		if (beforeNumber >= newNumber) {
+			newNumber = beforeNumber;
+		}
+		return newNumber;
+
+	}
+
 }
