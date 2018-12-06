@@ -9,15 +9,15 @@ public class Run {
 		while (deck.Nokori > 0) {
 			Card card = deck.CardDraw();
 			deck.NokoriCard();
-			String s = card.Mark + "の" + card.number;
+			String s = card.getMark() + "の" + card.getNumber();
 
 			maxNumber = deck.MaxNumber(maxNumber);
 
-			String x = card.highName;
-			if (card.number == 14) {
+			String x = card.getHighName();
+			if (card.getNumber() == 14) {
 				System.out.println("カードは" + x + "です。");
-			} else if (card.isHigh == true) {
-				System.out.println("カードは" + card.Mark + "の" + x + "です。");
+			} else if (card.getIsHigh() == true) {
+				System.out.println("カードは" + card.getMark() + "の" + x + "です。");
 			} else {
 				System.out.println("カードは" + s + "です。");
 			}

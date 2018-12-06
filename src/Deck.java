@@ -59,8 +59,8 @@ public class Deck {
 
 	public int MaxNumber(int beforeNumber) {
 		int maxNumber = beforeNumber;
-		if (card.number > maxNumber) {
-			maxNumber = card.number;
+		if (card.getNumber() > maxNumber) {
+			maxNumber = card.getNumber();
 		}
 		return maxNumber;
 	}

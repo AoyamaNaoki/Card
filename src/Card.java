@@ -1,10 +1,10 @@
 
 public class Card {
 
-	public int number;
-	public String Mark;
-	public boolean isHigh;
-	public String highName;
+	private int number;
+	private String Mark;
+	private boolean isHigh;
+	private String highName;
 
 	public Card(int number, String Mark) {
 		this.number = number;
@@ -31,6 +31,22 @@ public class Card {
 			highName = "ACE";
 			isHigh = true;
 		}
+	}
+
+	public int getNumber() {
+		return this.number;
+	}
+
+	public String getMark() {
+		return this.Mark;
+	}
+
+	public boolean getIsHigh() {
+		return this.isHigh;
+	}
+
+	public String getHighName() {
+		return this.highName;
 	}
 
 }
