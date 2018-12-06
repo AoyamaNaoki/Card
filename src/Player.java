@@ -12,8 +12,8 @@ public class Player {
 
 	public void addHand() {
 		if (hands.size() < 5) {
-			hands.add(deck.card);
-			System.out.println(hands.get(0));
+			hands.add(deck.CardDraw());
+			System.out.println(hands.get(1));
 		}
 	}
 }

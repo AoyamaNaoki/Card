@@ -10,6 +10,7 @@ public class Deck {
 	String Mark = null;
 	public boolean isHigh = false;
 
+	// デッキの初期化
 	public void InitDeck() {
 
 		for (int i = 1; i <= 14; i++) {
@@ -46,17 +47,20 @@ public class Deck {
 		Collections.shuffle(cards);
 	}
 
+	// デッキからカードを引く
 	public Card CardDraw() {
 		card = cards.get(0);
 		cards.remove(0);
 		return card;
 	}
 
+	// 残りのカード枚数
 	public int NokoriCard() {
 		Nokori = cards.size();
 		return Nokori;
 	}
 
+	// 引いた中での最大値を返す
 	public int MaxNumber(int beforeNumber) {
 		int maxNumber = beforeNumber;
 		if (card.getNumber() > maxNumber) {
