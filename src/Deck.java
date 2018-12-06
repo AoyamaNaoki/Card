@@ -6,6 +6,7 @@ public class Deck {
 
 	static List<Card> cards = new ArrayList<Card>();
 	public int Nokori = 55;
+	Card card = null;
 
 	public void InitDeck() {
 
@@ -47,7 +48,7 @@ public class Deck {
 	}
 
 	public Card CardDraw() {
-		Card card = null;
+
 		card = cards.get(0);
 		cards.remove(0);
 		return card;
@@ -58,12 +59,12 @@ public class Deck {
 		return Nokori;
 	}
 
-	public int KeepNumber(int beforeNumber, int newNumber) {
-		if (beforeNumber >= newNumber) {
-			newNumber = beforeNumber;
+	public int MaxNumber(int beforeNumber) {
+		int maxNumber = beforeNumber;
+		if (card.number > maxNumber) {
+			maxNumber = card.number;
 		}
-		return newNumber;
-
+		return maxNumber;
 	}
 
 }
