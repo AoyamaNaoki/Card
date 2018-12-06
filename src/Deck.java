@@ -74,25 +74,33 @@ public class Deck {
 
 	public String IsHigh() {
 		String highName = null;
-		checkCard();
-		if (isHigh == true && card.number == 11) {
+
+		if (card.number == 11) {
 			highName = "JACK";
+			isHigh = true;
 		}
-		if (isHigh == true && card.number == 12) {
+		if (card.number == 12) {
 			highName = "QUEEN";
+			isHigh = true;
 		}
-		if (isHigh == true && card.number == 13) {
+		if (card.number == 13) {
 			highName = "KING";
+			isHigh = true;
 		}
-		if (isHigh == true && card.number == 14) {
+		if (card.number == 14) {
 			highName = "JOKER";
+			isHigh = true;
+		}
+		if (card.number == 1) {
+			highName = "ACE";
+			isHigh = true;
 		}
 		return highName;
 	}
 
 	public void execString(String s) {
 		String x = IsHigh();
-		if (isHigh == true) {
+		if (isHigh == true || card.number == 1) {
 			System.out.println("カードは" + card.Mark + "の" + x + "です。");
 			isHigh = false;
 		} else {
