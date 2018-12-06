@@ -44,7 +44,6 @@ public class Deck {
 			}
 		}
 		Collections.shuffle(cards);
-
 	}
 
 	public Card CardDraw() {
@@ -67,7 +66,6 @@ public class Deck {
 	}
 
 	public boolean checkCard() {
-
 		if (card.number == 11 || card.number == 12 || card.number == 13 || card.number == 14) {
 			isHigh = true;
 		}
@@ -90,7 +88,6 @@ public class Deck {
 			highName = "JOKER";
 		}
 		return highName;
-
 	}
 
 	public void execString(String s) {

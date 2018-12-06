@@ -12,7 +12,6 @@ public class Run {
 			String s = card.Mark + "の" + card.number;
 
 			maxNumber = deck.MaxNumber(maxNumber);
-
 			deck.execString(s);
 			System.out.println("現在の最大の数値は" + maxNumber + "です");
 			System.out.println("残り枚数は" + deck.Nokori + "枚です。");
