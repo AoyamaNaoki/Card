@@ -13,7 +13,7 @@ public class Run {
 
 			maxNumber = deck.MaxNumber(maxNumber);
 
-			System.out.println("カードは" + s + "です。");
+			deck.execString(s);
 			System.out.println("現在の最大の数値は" + maxNumber + "です");
 			System.out.println("残り枚数は" + deck.Nokori + "枚です。");
 			System.out.println();
