@@ -8,7 +8,7 @@ public class Deck {
 	public int Nokori = 55;
 	Card card = null;
 	String Mark = null;
-	boolean isHigh = false;
+	public boolean isHigh = false;
 
 	public void InitDeck() {
 
@@ -63,49 +63,6 @@ public class Deck {
 			maxNumber = card.number;
 		}
 		return maxNumber;
-	}
-
-	public boolean checkCard() {
-		if (card.number == 11 || card.number == 12 || card.number == 13 || card.number == 14) {
-			isHigh = true;
-		}
-		return isHigh;
-	}
-
-	public String IsHigh() {
-		String highName = null;
-
-		if (card.number == 11) {
-			highName = "JACK";
-			isHigh = true;
-		}
-		if (card.number == 12) {
-			highName = "QUEEN";
-			isHigh = true;
-		}
-		if (card.number == 13) {
-			highName = "KING";
-			isHigh = true;
-		}
-		if (card.number == 14) {
-			highName = "JOKER";
-			isHigh = true;
-		}
-		if (card.number == 1) {
-			highName = "ACE";
-			isHigh = true;
-		}
-		return highName;
-	}
-
-	public void execString(String s) {
-		String x = IsHigh();
-		if (isHigh == true || card.number == 1) {
-			System.out.println("カードは" + card.Mark + "の" + x + "です。");
-			isHigh = false;
-		} else {
-			System.out.println("カードは" + s + "です。");
-		}
 	}
 
 }
