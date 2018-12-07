@@ -7,7 +7,7 @@ public class Deck {
 	static List<Card> cards = new ArrayList<Card>();
 	public int Nokori = 55;
 	Card card = null;
-	String Mark = null;
+	String mark = null;
 	public boolean isHigh = false;
 
 	// デッキの初期化
@@ -15,9 +15,9 @@ public class Deck {
 
 		for (int i = 1; i <= 14; i++) {
 			if (i == 14) {
-				Mark = "JOKER";
-				Card joker1 = new Card(14, Mark);
-				Card joker2 = new Card(14, Mark);
+				mark = "JOKER";
+				Card joker1 = new Card(14, mark);
+				Card joker2 = new Card(14, mark);
 				cards.add(joker1);
 				cards.add(joker2);
 				break;
@@ -25,22 +25,22 @@ public class Deck {
 
 			for (int n = 0; n < 4; n++) {
 				if (n == 0) {
-					Mark = "ハート";
+					mark = "ハート";
 				}
 				if (n == 1) {
-					Mark = "ダイヤ";
+					mark = "ダイヤ";
 				}
 				if (n == 2) {
-					Mark = "クローバー";
+					mark = "クローバー";
 				}
 				if (n == 3) {
-					Mark = "スペード";
+					mark = "スペード";
 				}
 				if (n >= 4) {
 					n = 0;
 				}
 
-				Card card = new Card(i, Mark);
+				Card card = new Card(i, mark);
 				cards.add(card);
 			}
 		}

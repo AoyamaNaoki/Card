@@ -2,15 +2,16 @@
 public class Card {
 
 	private int number;
-	private String Mark;
+	private String mark;
 	private boolean isHigh;
 	private String highName;
 	private int compareNumber;
+	private int compareMark;
 
 	// コンストラクタ
-	public Card(int number, String Mark) {
+	public Card(int number, String mark) {
 		this.number = number;
-		this.Mark = Mark;
+		this.mark = mark;
 		this.isHigh = false;
 
 		if (this.number == 11) {
@@ -42,7 +43,7 @@ public class Card {
 
 	// カプセル化
 	public String getMark() {
-		return this.Mark;
+		return this.mark;
 	}
 
 	// カプセル化
@@ -55,6 +56,10 @@ public class Card {
 		return this.highName;
 	}
 
+	public int getCompareMark() {
+		return this.compareMark;
+	}
+
 	public int Compare(Card anotherCard) {
 
 		if (number > anotherCard.number) {
@@ -65,6 +70,26 @@ public class Card {
 			compareNumber = -1;
 		}
 		return compareNumber;
+	}
+
+	public int CompareMark(Card anotherCard) {
+		if (anotherCard.mark == "スペード") {
+			compareMark = -1;
+		}
+		if (anotherCard.mark == "ハート" && mark == "スペード") {
+			compareMark = 1;
+		} else {
+			compareMark = -1;
+		}
+		if (anotherCard.mark == "ダイヤ" && mark == "スペード" || mark == "ハート") {
+			compareMark = 1;
+		} else {
+			compareMark = -1;
+		}
+		if (anotherCard.mark == "クローバー") {
+			compareMark = 1;
+		}
+		return compareMark;
 	}
 
 }

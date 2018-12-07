@@ -41,6 +41,11 @@ public class Run {
 			System.out.println("カード1の数値はカード2より" + (card2.getNumber() - card1.getNumber()) + "小さいです");
 		} else if (card1.Compare(card2) == 0) {
 			System.out.println("カード1とカード2の数値は等しいです");
+			if (card1.CompareMark(card2) == 1) {
+				System.out.println("カード1のマークがカード2より強いので勝ちです");
+			} else {
+				System.out.println("カード1のマークがカード2より弱いので負けです");
+			}
 		} else {
 			System.out.println("カード1の数値はカード2より" + (card1.getNumber() - card2.getNumber()) + "大きいです");
 		}
