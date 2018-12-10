@@ -5,8 +5,7 @@ public class Card {
 	private String mark;
 	private boolean isHigh;
 	private String highName;
-	private int compareNumber;
-	private int compareMark;
+	private int compareResult;
 
 	// コンストラクタ
 	public Card(int number, String mark) {
@@ -57,39 +56,36 @@ public class Card {
 	}
 
 	public int getCompareMark() {
-		return this.compareMark;
+		return this.compareResult;
 	}
 
-	public int Compare(Card anotherCard) {
-
+	public int CompareCard(Card anotherCard) {
 		if (number > anotherCard.number) {
-			compareNumber = 1;
-		} else if (number == anotherCard.number) {
-			compareNumber = 0;
-		} else {
-			compareNumber = -1;
+			compareResult = 1;
+		} else if (number < anotherCard.number) {
+			compareResult = -1;
 		}
-		return compareNumber;
+		if (number == anotherCard.number) {
+			if (mark == anotherCard.mark) {
+				compareResult = 0;
+			}
+			if (mark == "スペード" && anotherCard.mark != "スペード") {
+				compareResult = 1;
+			}
+			if (mark == "ハート" && anotherCard.mark == "スペード") {
+				compareResult = -1;
+			} else {
+				compareResult = 1;
+			}
+			if (mark == "ダイヤ" && anotherCard.mark == "クローバー") {
+				compareResult = 1;
+			} else {
+				compareResult = -1;
+			}
+			if (mark == "クローバー") {
+				compareResult = -1;
+			}
+		}
+		return compareResult;
 	}
-
-	public int CompareMark(Card anotherCard) {
-		if (anotherCard.mark == "スペード") {
-			compareMark = -1;
-		}
-		if (anotherCard.mark == "ハート" && mark == "スペード") {
-			compareMark = 1;
-		} else {
-			compareMark = -1;
-		}
-		if (anotherCard.mark == "ダイヤ" && mark == "スペード" || mark == "ハート") {
-			compareMark = 1;
-		} else {
-			compareMark = -1;
-		}
-		if (anotherCard.mark == "クローバー") {
-			compareMark = 1;
-		}
-		return compareMark;
-	}
-
 }

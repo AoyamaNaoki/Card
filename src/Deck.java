@@ -5,6 +5,7 @@ import java.util.List;
 public class Deck {
 
 	static List<Card> cards = new ArrayList<Card>();
+	List<Card> cards2 = new ArrayList<Card>();
 	public int Nokori = 55;
 	Card card = null;
 	String mark = null;
