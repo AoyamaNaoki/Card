@@ -56,19 +56,32 @@ public class Run {
 		Deck deck3 = new Deck();
 		deck3.InitDeck();
 		List<Card> cards3 = new ArrayList<Card>();
+		Card strongCard;
 
 		for (int i = 0; i < 5; i++) {
 			Card card = deck3.CardDraw();
 			cards3.add(card);
 		}
+//
+//		Card strongCard = cards3.get(0);
+//
+//		for (int i = 1; i < 5; i++) {
+//			if (strongCard.CompareCard(cards3.get(i)) == -1) {
+//				strongCard = cards3.get(i);
+//			}
+//		}
 
-		Card strongCard = cards3.get(0);
-
-		for (int i = 1; i < 5; i++) {
-			if (strongCard.CompareCard(cards3.get(i)) == -1) {
-				strongCard = cards3.get(i);
+		while (cards3.size() > 1) {
+			card1 = cards3.get(0);
+			card2 = cards3.get(1);
+			if (card1.CompareCard(card2) == -1) {
+				cards3.remove(0);
+			} else {
+				cards3.remove(1);
 			}
 		}
+
+		strongCard = cards3.get(0);
 
 		System.out.println("【カードを5枚引いて最も強いカードの出力】");
 		if (strongCard.getHighName() == "JOKER") {
