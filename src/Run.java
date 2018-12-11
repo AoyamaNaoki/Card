@@ -7,7 +7,7 @@ public class Run {
 		Deck deck = new Deck();
 		deck.InitDeck();
 		int maxNumber = 0;
-		int count = 3;
+//		int count = 3;
 		// 残り枚数があるときはカードを引く
 		while (deck.Nokori > 0) {
 			Card card = deck.CardDraw();
@@ -33,7 +33,7 @@ public class Run {
 
 		}
 
-		// カードの大小比較
+		// 2枚のカードの強さ比較
 		Deck deck2 = new Deck();
 		deck2.InitDeck();
 		Card card1 = deck2.CardDraw();
@@ -52,37 +52,31 @@ public class Run {
 		}
 		System.out.println();
 
+		// 5枚で最も強いカードの表示
 		Deck deck3 = new Deck();
 		deck3.InitDeck();
-		Card card3 = deck3.CardDraw();
-		Card card4 = deck3.CardDraw();
-		Card card5 = deck3.CardDraw();
-		Card card6 = deck3.CardDraw();
-		Card card7 = deck3.CardDraw();
 		List<Card> cards3 = new ArrayList<Card>();
-		cards3.add(card3);
-		cards3.add(card4);
-		cards3.add(card5);
-		cards3.add(card6);
-		cards3.add(card7);
-		Card strongCard;
 
-		if (card3.CompareCard(card4) == 1) {
-			strongCard = card3;
-		} else {
-			strongCard = card4;
+		for (int i = 0; i < 5; i++) {
+			Card card = deck3.CardDraw();
+			cards3.add(card);
 		}
-		if (strongCard.CompareCard(card5) == -1) {
-			strongCard = card5;
+
+		Card strongCard = cards3.get(0);
+
+		for (int i = 1; i < 5; i++) {
+			if (strongCard.CompareCard(cards3.get(i)) == -1) {
+				strongCard = cards3.get(i);
+			}
 		}
-		if (strongCard.CompareCard(card6) == -1) {
-			strongCard = card6;
-		}
-		if (strongCard.CompareCard(card7) == -1) {
-			strongCard = card7;
-		}
+
 		System.out.println("【カードを5枚引いて最も強いカードの出力】");
-		System.out.println("5枚のカードの中で最も強いのは " + strongCard.getMark() + " の " + strongCard.getNumber() + " です ");
+		if (strongCard.getHighName() == "JOKER") {
+			System.out.println("5枚のカードで最も強いカードはJOKERです");
+		} else {
+			System.out.println("5枚のカードの中で最も強いのは " + strongCard.getMark() + " の " + strongCard.getNumber() + " です ");
+		}
+
 		System.out.println();
 	}
 
