@@ -41,17 +41,14 @@ public class Card {
 		return this.number;
 	}
 
-	// カプセル化
 	public String getMark() {
 		return this.mark;
 	}
 
-	// カプセル化
 	public boolean getIsHigh() {
 		return this.isHigh;
 	}
 
-	// カプセル化
 	public String getHighName() {
 		return this.highName;
 	}

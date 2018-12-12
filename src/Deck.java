@@ -11,7 +11,6 @@ public class Deck {
 	String mark = null;
 	public boolean isHigh = false;
 
-	// デッキの初期化
 	public void InitDeck() {
 
 		for (int i = 1; i <= 14; i++) {
@@ -48,7 +47,6 @@ public class Deck {
 		Collections.shuffle(cards);
 	}
 
-	// デッキからカードを引く
 	public Card CardDraw() {
 		card = cards.get(0);
 		cards.remove(0);
