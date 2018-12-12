@@ -71,17 +71,17 @@ public class Run {
 //			}
 //		}
 
-		while (cards3.size() > 1) {
-			card1 = cards3.get(0);
-			card2 = cards3.get(1);
-			if (card1.CompareCard(card2) == -1) {
-				cards3.remove(0);
-			} else {
-				cards3.remove(1);
-			}
-		}
+//		while (cards3.size() > 1) {
+//			card1 = cards3.get(0);
+//			card2 = cards3.get(1);
+//			if (card1.CompareCard(card2) == -1) {
+//				cards3.remove(0);
+//			} else {
+//				cards3.remove(1);
+//			}
+//		}
 
-		strongCard = cards3.get(0);
+		strongCard = Card.CompareCards(cards3);
 
 		System.out.println("【カードを5枚引いて最も強いカードの出力】");
 		if (strongCard.getHighName() == "JOKER") {

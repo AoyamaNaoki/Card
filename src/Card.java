@@ -1,3 +1,4 @@
+import java.util.List;
 
 public class Card {
 
@@ -87,5 +88,19 @@ public class Card {
 			}
 		}
 		return compareResult;
+	}
+
+	public static Card CompareCards(List<Card> cards) {
+
+		while (cards.size() > 1) {
+			Card card1 = cards.get(0);
+			Card card2 = cards.get(1);
+			if (card1.CompareCard(card2) == -1) {
+				cards.remove(0);
+			} else {
+				cards.remove(1);
+			}
+		}
+		return cards.get(0);
 	}
 }
