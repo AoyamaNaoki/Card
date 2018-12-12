@@ -103,4 +103,14 @@ public class Card {
 		}
 		return cards.get(0);
 	}
+
+	public String cardAndNumber() {
+		String str;
+		if (number == 14) {
+			str = this.getHighName();
+		} else {
+			str = this.getMark() + "の" + this.getNumber();
+		}
+		return str;
+	}
 }

@@ -42,11 +42,11 @@ public class Run {
 		System.out.println("【カード2枚の強さの比較】");
 
 		if (card1.CompareCard(card2) == 1) {
-			System.out.println("カード1はカード2に対し勝ちです");
+			System.out.println(card1.cardAndNumber() + "の勝ちです");
 		} else if (card1.CompareCard(card2) == 0) {
-			System.out.println("カード1はカード2に対し引き分けです");
+			System.out.println("引き分けです");
 		} else if (card1.CompareCard(card2) == -1) {
-			System.out.println("カード1はカード2に対し負けです");
+			System.out.println(card2.cardAndNumber() + "の勝ちです");
 		} else {
 			System.out.println("そのパターンは存在しません");
 		}
